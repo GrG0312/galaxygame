@@ -1,12 +1,10 @@
 ﻿namespace Model.Designs
 {
-    public class Design
+    public class Design : NamedObject
     {
-        public string Name { get; }
         public Module[] ModuleSlots { get; }
-        public Design(string name, ushort modules)
+        public Design(string name, ushort modules) : base(name)
         {
-            Name = name;
             ModuleSlots = new Module[modules];
         }
     }
