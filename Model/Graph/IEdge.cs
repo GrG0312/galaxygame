@@ -6,7 +6,7 @@ namespace Model.Graph
     {
         public V Vertex1 { get; }
         public V Vertex2 { get; }
-        public int Speed { get; }
+        public ushort Rank { get; }
         public V GetOtherEnd(V other)
         {
             if (Vertex1.Equals(other))

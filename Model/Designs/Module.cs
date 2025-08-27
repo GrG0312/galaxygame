@@ -1,25 +1,8 @@
 ﻿namespace Model.Designs
 {
-    public abstract class Module
+    public class Module : NamedObject
     {
-        public string Name { get; }
-        protected Module(string name)
-        {
-            Name = name;
-        }
-    }
-
-    public abstract class WeaponModule : Module
-    {
-        public WeaponModule(string name) : base(name)
-        {
-
-        }
-    }
-
-    public class GeneratorModule : Module
-    {
-        public GeneratorModule(string name) : base(name)
+        public Module(string name) : base(name)
         {
 
         }

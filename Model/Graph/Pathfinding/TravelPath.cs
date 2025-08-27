@@ -8,7 +8,7 @@
         public TravelPath(List<EdgeType> edges)
         {
             EdgesToTravel = new List<EdgeType>(edges);
-            TotalCost = EdgesToTravel.Sum(edge => edge.Speed);
+            TotalCost = EdgesToTravel.Sum(edge => edge.Rank);
         }
     }
 }

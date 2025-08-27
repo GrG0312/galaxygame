@@ -1,13 +1,11 @@
 ﻿namespace Model
 {
-    public class Nation
+    public class Nation : NamedObject
     {
-        public string Name { get; protected set; }
         public string Adjective { get; protected set; }
 
-        public Nation(string name, string adjective)
+        public Nation(string name, string adjective) : base(name)
         {
-            Name = name;
             Adjective = adjective;
         }
     }

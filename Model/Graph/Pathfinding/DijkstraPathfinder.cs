@@ -59,7 +59,7 @@ namespace Model.Graph.Pathfinding
                     }
 
                     VertexType neighbor = currentEdge.GetOtherEnd(currentVertex);
-                    int newDistance = distances[currentVertex] + currentEdge.Speed;
+                    int newDistance = distances[currentVertex] + currentEdge.Rank;
 
                     if (newDistance < distances[neighbor])
                     {

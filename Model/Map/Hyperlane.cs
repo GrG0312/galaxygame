@@ -1,30 +1,30 @@
-﻿using Model.CodeComponents;
+﻿using Model.CodeComponents.PlanetComponents;
 using Model.Graph;
 
 namespace Model.Map
 {
     public class Hyperlane : IEdge<Planet>
     {
-        #region Local constants
-        private static int MAX_SPEED => GameDefines.HYPERLANE_MAX_SPEED;
-        private static int MIN_SPEED => GameDefines.HYPERLANE_MIN_SPEED;
+        #region Constants
+        public const ushort MIN_RANK = 1;
+        public const ushort MAX_RANK = 3;
         #endregion
 
         public Planet Vertex1 { get; }
         public Planet Vertex2 { get; }
-        public int Speed { get; }
+        public ushort Rank { get; }
 
         public VisibilityComponent Visibility { get; private set; }
 
-        public Hyperlane(Planet v1, Planet v2, int speed, HashSet<Nation>? visibility)
+        public Hyperlane(Planet v1, Planet v2, ushort rank, HashSet<Nation>? visibility)
         {
-            if (speed < MIN_SPEED || speed > MAX_SPEED)
+            if (rank < MIN_RANK || rank > MAX_RANK)
             {
-                throw new GameException($"Thrust must be between {MIN_SPEED} and {MAX_SPEED}");
+                throw new GameException($"Rank of hyperlane must be between {MIN_RANK} and {MAX_RANK}");
             }
             Vertex1 = v1;
             Vertex2 = v2;
-            Speed = speed;
+            Rank = rank;
             Visibility = new VisibilityComponent(visibility);
         }
 

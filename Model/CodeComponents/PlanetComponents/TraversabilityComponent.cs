@@ -1,4 +1,4 @@
-﻿namespace Model.CodeComponents
+﻿namespace Model.CodeComponents.PlanetComponents
 {
     public class TraversabilityComponent
     {
