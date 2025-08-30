@@ -1,4 +1,4 @@
-﻿namespace Model
+﻿namespace Model.Values
 {
     /// <summary>
     /// Encapsulates various statistics related to a ship performance and characteristics.
@@ -43,6 +43,16 @@
         /// Strength of the installed armor.
         /// </summary>
         public float Armor;
+
+        /// <summary>
+        /// Defense against missiles and torpedoes.
+        /// </summary>
+        public float PointDefense;
+
+        /// <summary>
+        /// Defense against aircraft.
+        /// </summary>
+        public float FlaK;
         #endregion
     }
 }

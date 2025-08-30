@@ -1,4 +1,4 @@
-﻿namespace Model
+﻿namespace Model.Values
 {
     /// <summary>
     /// Represents a collection of various resources in the game.

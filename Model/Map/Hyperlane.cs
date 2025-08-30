@@ -1,4 +1,4 @@
-﻿using Model.CodeComponents.PlanetComponents;
+﻿using Model.CodeComponents.MapComponents;
 using Model.Graph;
 
 namespace Model.Map

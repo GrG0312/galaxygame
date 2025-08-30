@@ -1,6 +1,4 @@
-﻿using System.Security.AccessControl;
-
-namespace Model
+﻿namespace Model.Values
 {
     /// <summary>
     /// Encapsulates various statistics related to a weapon's performance and characteristics.
@@ -11,11 +9,6 @@ namespace Model
         /// Damage dealt on hit, before applying critical multipliers or splash reductions.
         /// </summary>
         public float Damage;
-
-        /// <summary>
-        /// Shots per unit time (e.g., per second).
-        /// </summary>
-        public float FireRate;
 
         /// <summary>
         /// Represents the range of a value, such as a distance or measurement.
@@ -58,7 +51,6 @@ namespace Model
             float criticalChance = 0)
         {
             Damage = damage;
-            FireRate = rateOfFire;
             Range = range;
             Accuracy = accuracy;
             PowerConsumption = powerConsumption;
@@ -70,7 +62,6 @@ namespace Model
         public readonly bool Equals(WeaponStatistics other)
         {
             return Damage == other.Damage &&
-                   FireRate == other.FireRate &&
                    Range == other.Range &&
                    Accuracy == other.Accuracy &&
                    ProjectileSpeed == other.ProjectileSpeed &&
@@ -85,7 +76,7 @@ namespace Model
 
         public override readonly int GetHashCode()
         {
-            return HashCode.Combine(Damage, FireRate, Range, Accuracy, ProjectileSpeed, SplashRadius, CriticalChance);
+            return HashCode.Combine(Damage, Range, Accuracy, ProjectileSpeed, SplashRadius, CriticalChance);
         }
 
         public static bool operator ==(WeaponStatistics left, WeaponStatistics right)
